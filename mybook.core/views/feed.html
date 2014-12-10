@@ -1,0 +1,25 @@
+<div id="newFeeder">
+    <input id="feedText" placeholder="Text or URL feed here..." ng-model="feedText"/>
+    <button id="feedPostBtn" ng-disabled="disabledPost()" ng-click="doPost()">Post</button>
+</div>
+<div id="feedDisplayer">
+    <ul>
+        <li ng-repeat="feed in feeds">
+            <div id="feed{{feed.id}}" class="feed">
+                <div id="feedUserIcon"></div>
+                <div id="feedContent">
+                    <p ng-if="feed.isText()">{{feed.text}}</p>
+                    <a ng-if="feed.isUrl()" href="{{feed.URL}}" target="_blank">{{feed.URL}}</a>
+                </div>
+                <div id="feedRsp">
+                    <div id="feedDelete">
+                        <button id="feedDeleteBtn" ng-click="doDeleteFeed(feed.id)"></button>
+                    </div>
+                    <div id="feedDate">
+                        <p> {{feed.getPostedOn()}}</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

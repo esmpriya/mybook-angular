@@ -1,0 +1,77 @@
+#newFeeder {
+    height: 100px;
+}
+
+#feedText {
+    height: 30px;
+    width: 550px;
+    text-align: center;
+    margin: 25px;
+}
+
+#feedPostBtn {
+    height:30px;
+    width:80px;
+}
+
+#feedDisplayer {
+    height: calc(100%-100px);
+    width: 70%;
+}
+
+#feedDisplayer ul li {
+    list-style-type: none;
+    margin: 0px 0px 20px 25px;
+    height: 75px;
+}
+
+.feed {
+    height: 75px;
+    text-align: justify;
+    background-color: #3AE2CE;
+}
+
+#feedUserIcon {
+    float: left;
+    height: 100%;
+    width: 35px;
+    background-image: url("../images/user.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    padding-left: 15px;
+}
+
+#feedContent {
+    float: left;
+    width: calc(100% - 215px);
+    word-wrap: break-word;
+    margin: 15px;
+}
+
+#feedRsp {
+    float: right;
+    height: 100%;
+    width: 135px;
+}
+
+#feedDelete {
+    height: 50%;
+    width: 100%;
+    text-align: right;
+}
+
+#feedDeleteBtn {
+    height: 15px;
+    width: 15px;
+    background-image: url("../images/delete1.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+}
+
+#feedDate {
+    height: 50%;
+    width: 100%;
+    text-align: right;
+}

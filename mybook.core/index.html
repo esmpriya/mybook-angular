@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="mybookApp">
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title>MyBook</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/mybook.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
+
+    <script type="text/javascript" src="../assets/lib/angular.min.js"></script>
+    <script type="text/javascript" src="../assets/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="./mybook.js"></script>
+    <script type="text/javascript" src="./controllers/HeaderController.js"></script>
+    <script type="text/javascript" src="./controllers/NavController.js"></script>
+    <script type="text/javascript" src="./controllers/FeedController.js"></script>
+    <script type="text/javascript" src="./controllers/ProfileController.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <header ng-controller="headerController as header">
+        <div id="appTitle">
+            <h1>MyBook</h1>
+        </div>
+        <div id="sign-in" ng-hide="session.isAuthenticated">
+            <form name="signInForm">
+                <input  id="username" placeholder="User name" size=15 required=true
+                        ng-model="session.user.username">
+                <input  id="password" placeholder="Password"  size=15 required=true
+                        ng-model="session.user.password">
+                <button id="signIn"   ng-disabled="header.disabledSignIn()"
+                        ng-click="header.doSignIn()">Sign in</button>
+            </form>
+        </div>
+        <div id="sign-out" ng-show=session.isAuthenticated>
+            <form name="signOutForm" action="./index.html">
+                <button id="signOut" ng-click="header.doSignOut()">Sign Out</button>
+            </form>
+        </div>
+    </header>
+    <div id="content" ng-show="session.isAuthenticated">
+        <nav ng-controller="navController as nav">
+            <ul>
+                <li><button id="feedNav"    ng-click="nav.doFeed()">Feed</button></li>
+                <li><button id="profileNav" ng-click="nav.doProfile()">Profile</button></li>
+            </ul>
+        </nav>
+        <main ng-view>
+        </main>
+    </div>
+    <div id="homeImg" ng-hide="session.isAuthenticated">
+        <img class="homeImg" src="../assets/images/home1.gif"/>
+    </div>
+    <footer>
+        <p>Talent Improving exercise, OFS</p>
+    </footer>
+</div>
+</body>
+</html>

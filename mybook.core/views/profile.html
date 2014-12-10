@@ -1,0 +1,35 @@
+<div id="profile">
+    <form id="profile-form">
+        <div>
+            <span  class="required">*</span>
+            <input class="prf-field" id="name" placeholder="Name" required ng-model="profile.detail.name"/>
+        </div>
+        <div>
+            <span  class="required">*</span>
+            <input class="prf-field" id="age" placeholder="Age" required ng-model="profile.detail.age"/>
+        </div>
+        <div>
+            <span  class="required">*</span>
+            <input class="prf-field" id="phone" placeholder="Phone" required
+                   ng-model="profile.detail.phone"/>
+        </div>
+        <div>
+            <span  class="required">*</span>
+            <input class="prf-field" id="email" type="email" placeholder="Email" required
+                   ng-model="profile.detail.email"/>
+        </div>
+        <div><textarea class="prf-field" id="address" rows="4" cols="30" placeholder="Address"
+                   ng-model="profile.detail.address"></textarea></div>
+        <div>
+            <input class="prf-field" id="imageChooser" type="file" name="pic" accept="image/*"
+                   onchange="angular.element(this).scope().doDisplayImage(this)">
+        </div>
+        <div>
+            <button id="saveProfile" class="prf-field"
+                    ng-click="profile.doSaveDetail()">Submit</button>
+        </div>
+    </form>
+    <div class="image-displayer" id="imageDisplayer">
+        <img class="img" id="profile-img"></img>
+    </div>
+</div>
